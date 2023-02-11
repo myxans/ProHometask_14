@@ -77,13 +77,16 @@ console.log(arrAdd())
 
 //Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
 
-let text = prompt('Введіть речення');
-let item = prompt('Введіть літери на видалення');
+let text = 'hello world';
+let bukv = 'h, o';
+let item = bukv.split(', ');
 
-function removeElement(text, item) {
-    const removeText = new RegExp(item.toString().split(",").join(""), "g");
-    let newText = text.replaceAll(removeText, "");
-    return newText;
+function removeEl(text, item) {
+    let newText = '';
+    item.forEach(element => {
+        newText = text.replaceAll(element, '')
+    });
+    return newText
 }
 
-console.log(removeElement(text, item));
+console.log(removeEl(text, item))
